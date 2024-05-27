@@ -1,0 +1,92 @@
+
+class AndroidAtcHotelScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Android ATC Hotel'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset('assets/hotel_image.jpg'),
+          SizedBox(height: 16),
+          Text('Check-in Date: 2020-8-5'),
+          SizedBox(height: 8),
+          Text('Check-Out Date: 2020-8-12'),
+          SizedBox(height: 16),
+          Text('Adults: 0.0'),
+          SizedBox(height: 8),
+          Text('Children: 0.0'),
+          SizedBox(height: 16),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Extras:'),
+              SizedBox(height: 8),
+              CheckboxListTile(
+                title: Text('Breakfast (10 USD/Day)'),
+                value: false,
+                onChanged: (value) {},
+              ),
+              CheckboxListTile(
+                title: Text('Internet WiFi (5 USD/Day)'),
+                value: false,
+                onChanged: (value) {},
+              ),
+              CheckboxListTile(
+                title: Text('Parking (5 USD/Day)'),
+                value: false,
+                onChanged: (value) {},
+              ),
+              CheckboxListTile(
+                title: Text('Swimming Pool (10 USD/Day)'),
+                value: false,
+                onChanged: (value) {},
+              ),
+            ],
+          ),
+          SizedBox(height: 16),
+          Text('View:'),
+          RadioListTile(
+            title: Text('City View'),
+            value: 'city_view',
+            groupValue: 'city_view',
+            onChanged: (value) {},
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Rooms List Screen
+class RoomsListScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Rooms List'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('King Room'),
+            subtitle: Text('A room with a king-sized bed.'),
+            leading: Image.asset('assets/king_room.jpg'),
+          ),
+          ListTile(
+            title: Text('Double Room'),
+            subtitle: Text('A room assigned to two people.'),
+            leading: Image.asset('assets/double_room.jpg'),
+          ),
+          ListTile(
+            title: Text('Family Room'),
+            subtitle: Text('A room assigned to three or four people.'),
+            leading: Image.asset('assets/family_room.jpg'),
+          ),
+        ],
+      ),
+    );
+  }
+}
